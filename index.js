@@ -10,7 +10,19 @@ $(document).ready(function() {
             },
             success: function(response) {
                 $('#chatbot-response').text(response.text);
+                let newMessage = $('<div>', {
+                    class: 'message'
+                }).text(response.text);
+                let removeButton = $('<button>', {
+                    class: 'remove-button'
+                }).text('Remove');
+                newMessage.append(removeButton);
+                $('#chat-history').append(newMessage);
             }
         })
     })
 })
+
+$(document).on('click', '.remove-button', function() {
+    $(this).parent().remove();
+});

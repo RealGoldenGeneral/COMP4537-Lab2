@@ -4,6 +4,7 @@ const app = express();
 const fetch = require('node-fetch');
 
 var cors = require('cors');
+app.use(cors());
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 app.use(urlencodedParser);

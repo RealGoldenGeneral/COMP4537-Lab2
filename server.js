@@ -1,7 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-app.use(bodyParser.json());
+const fetch = require('node-fetch');
+
+var cors = require('cors');
+
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+app.use(urlencodedParser);
 
 app.post('/chatbot', (req, res) => {
     const message = req.body.message;

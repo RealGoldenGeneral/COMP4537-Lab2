@@ -9,7 +9,7 @@ $(document).ready(function() {
                 message: message
             },
             success: function(response) {
-                $('chatbot-response').text(response.text);
+                $('#chatbot-response').text(response.text);
             }
         })
     })
